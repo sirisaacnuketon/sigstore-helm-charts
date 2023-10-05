@@ -1,8 +1,8 @@
 # policy-controller
 
-![Version: 0.5.8](https://img.shields.io/badge/Version-0.5.8-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.7.0](https://img.shields.io/badge/AppVersion-0.7.0-informational?style=flat-square)
+![Version: 0.6.5](https://img.shields.io/badge/Version-0.6.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.8.2](https://img.shields.io/badge/AppVersion-0.8.2-informational?style=flat-square)
 
-The Helm chart for Policy  Controller
+The Helm chart for Policy Controller
 
 **Homepage:** <https://github.com/sigstore/policy-controller>
 
@@ -23,6 +23,7 @@ The Helm chart for Policy  Controller
 |-----|------|---------|-------------|
 | commonNodeSelector | object | `{}` |  |
 | commonTolerations | list | `[]` |  |
+| commonAnnotations | object | `{}` |  |
 | cosign.cosignPub | string | `""` |  |
 | cosign.webhookName | string | `"policy.sigstore.dev"` |  |
 | imagePullSecrets | list | `[]` |  |
@@ -54,6 +55,9 @@ The Helm chart for Policy  Controller
 | webhook.resources.requests.memory | string | `"128Mi"` |  |
 | webhook.securityContext.enabled | bool | `false` |  |
 | webhook.securityContext.runAsUser | int | `65532` |  |
+| webhook.podDisruptionBudget.enabled | bool | `true` |  |
+| webhook.podDisruptionBudget.minAvailable | int | `1` |  |
+| webhook.podDisruptionBudget.maxUnavailable | int | `null` |  |
 | webhook.service.annotations | object | `{}` |  |
 | webhook.service.port | int | `443` |  |
 | webhook.service.type | string | `"ClusterIP"` |  |
@@ -64,7 +68,7 @@ The Helm chart for Policy  Controller
 | webhook.volumes | list | `[]` |  |
 | leasescleanup.image.pullPolicy | string | `"IfNotPresent"` |  |
 | leasescleanup.image.repository | string | `"cgr.dev/chainguard/kubectl"` |  |
-| leasescleanup.image.version | string | `"1.26.0"` |  |
+| leasescleanup.image.version | string | `"latest-dev"` | `"NOTE: use latest-dev tag because leases cleanup job needs /bin/sh, not present in latest tag"` |
 
 ### Deploy `policy-controller` Helm Chart
 

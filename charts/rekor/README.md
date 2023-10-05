@@ -1,6 +1,6 @@
 # rekor
 
-![Version: 1.3.6](https://img.shields.io/badge/Version-1.3.6-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.2.2](https://img.shields.io/badge/AppVersion-1.2.2-informational?style=flat-square)
+![Version: 1.3.8](https://img.shields.io/badge/Version-1.3.8-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.3.0](https://img.shields.io/badge/AppVersion-1.3.0-informational?style=flat-square)
 
 Part of the sigstore project, Rekor is a timestamping server and transparency log for storing signatures, as well as an API based server for validation
 
@@ -20,7 +20,7 @@ Part of the sigstore project, Rekor is a timestamping server and transparency lo
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://sigstore.github.io/helm-charts | trillian | 0.1.17 |
+| https://sigstore.github.io/helm-charts | trillian | 0.2.12 |
 
 ## Values
 
@@ -44,7 +44,7 @@ Part of the sigstore project, Rekor is a timestamping server and transparency lo
 | createtree.image.pullPolicy | string | `"IfNotPresent"` |  |
 | createtree.image.registry | string | `"ghcr.io"` |  |
 | createtree.image.repository | string | `"sigstore/scaffolding/createtree"` |  |
-| createtree.image.version | string | `"sha256:03e7b3b068e61f65a730b7a95f498c76a02ddecb4f7a65e09b2753b66ac8399f"` |  |
+| createtree.image.version | string | `"sha256:8e921d028b46d5ad98994d58f79e2724cf84e99e3270f5799fe0f1a6b518bc4e"` |  |
 | createtree.name | string | `"createtree"` |  |
 | createtree.resources | object | `{}` |  |
 | createtree.securityContext.runAsNonRoot | bool | `true` |  |
@@ -109,7 +109,7 @@ Part of the sigstore project, Rekor is a timestamping server and transparency lo
 | server.image.pullPolicy | string | `"IfNotPresent"` |  |
 | server.image.registry | string | `"gcr.io"` |  |
 | server.image.repository | string | `"projectsigstore/rekor-server"` |  |
-| server.image.version | string | `"sha256:23213617ad2b63305064b2a2be0ffe8038c2dc9c4f69b22ffe85ed83f65f54c7"` |  |
+| server.image.version | string | `"sha256:1cf8618112dd67113a49c93f717488e45c5fc765eb03484870123404d9e9f00c"` |  |
 | server.ingress.annotations | object | `{}` |  |
 | server.ingress.className | string | `"nginx"` |  |
 | server.ingress.enabled | bool | `true` |  |
